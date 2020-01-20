@@ -137,7 +137,13 @@ module.exports = function(grunt) {
                     {
                         src: 'dist/webuploader.custom.js',
                         dest: 'dist/webuploader.custom.min.js'
+                    },
+
+                    {
+                        src: 'dist/webuploader.fis.js',
+                        dest: 'dist/webuploader.fis.min.js'
                     }
+                    
                 ]
             }
         },
@@ -283,8 +289,10 @@ module.exports = function(grunt) {
     grunt.loadTasks('build/tasks');    // 加载build目录下的所有task
 
     // Default task(s).
-    grunt.registerTask('default', ['jsbint:all', 'dist']);
+    // grunt.registerTask('default', ['jsbint:all', 'dist']);
+
+    grunt.registerTask('default', ['dist']);
     grunt.registerTask('dist', ['build', 'uglify', 'copy']);
-    grunt.registerTask('deploy', ['doc', 'jekyll', 'gh-pages']);
-    grunt.registerTask('test', ['connect', 'qunit']);
+    // grunt.registerTask('deploy', ['doc', 'jekyll', 'gh-pages']);
+    // grunt.registerTask('test', ['connect', 'qunit']);
 };
